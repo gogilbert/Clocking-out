@@ -8,7 +8,6 @@ enum dirs {LEFT, RIGHT, UP, DOWN}
 var facingDir = dirs.DOWN
 
 func _ready():
-	print("hi")
 	$AnimatedSprite2D.play("down_idle")
 
 func _physics_process(delta: float):
