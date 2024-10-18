@@ -14,3 +14,7 @@ func changeScene():
 				match from_scene:
 					"doorL", "doorR":
 						current_scene = "storeFloor"
+					"stairs":
+						current_scene = "break_room"
+			"break_room":
+				current_scene = "back_room"

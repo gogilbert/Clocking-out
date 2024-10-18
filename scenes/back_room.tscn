@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://74m786xnde7v"]
 
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="1_013lu"]
-[ext_resource type="Script" path="res://scenes/back_room.gd" id="1_twi6r"]
+[ext_resource type="Script" path="res://scripts/back_room.gd" id="1_twi6r"]
 [ext_resource type="PackedScene" uid="uid://w6cigjklhxi4" path="res://scenes/player.tscn" id="2_3kc8a"]
 [ext_resource type="PackedScene" uid="uid://p7s6p7twu46w" path="res://Interaction/Interaction area/interaction_area.tscn" id="4_jm8m2"]
 
@@ -88,7 +88,7 @@ tile_set = SubResource("TileSet_y1cyl")
 
 [node name="Player" parent="." instance=ExtResource("2_3kc8a")]
 z_index = 1
-position = Vector2(769, 183)
+position = Vector2(148, 75)
 
 [node name="DoorLInteract" parent="." instance=ExtResource("4_jm8m2")]
 z_index = 4
@@ -111,6 +111,7 @@ shape = SubResource("CircleShape2D_ltrs8")
 [node name="StairsInteract" parent="." instance=ExtResource("4_jm8m2")]
 z_index = 4
 position = Vector2(75, 86)
+action_name = "ascend stairs"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StairsInteract"]
 position = Vector2(-11, 11)

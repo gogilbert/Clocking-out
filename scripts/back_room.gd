@@ -20,6 +20,9 @@ func _ready():
 		"doorR":
 			$Player.position.x = 769
 			$Player.position.y = 184
+		"stairs":
+			$Player.position.x = 148
+			$Player.position.y = 75
 
 func _on_interact_doorL():
 	Globalscript.transition_scene = true
@@ -36,5 +39,9 @@ func _on_interact_stairs():
 func change_scene():
 	if Globalscript.transition_scene == true:
 		if Globalscript.current_scene == "back_room":
-			get_tree().change_scene_to_file("res://scenes/storeFloor.tscn")
-			Globalscript.changeScene()
+			if Globalscript.from_scene == "stairs":
+				get_tree().change_scene_to_file("res://scenes/break_room.tscn")
+				Globalscript.changeScene()
+			else:
+				get_tree().change_scene_to_file("res://scenes/storeFloor.tscn")
+				Globalscript.changeScene()

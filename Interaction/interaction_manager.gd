@@ -1,8 +1,5 @@
 extends Node2D
 
-# Gets player from player group
-@onready var player = get_tree().get_first_node_in_group("player")
-
 # Gets scene label
 @onready var label = $Label
 
