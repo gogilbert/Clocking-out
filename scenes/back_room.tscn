@@ -110,7 +110,7 @@ shape = SubResource("CircleShape2D_ltrs8")
 
 [node name="StairsInteract" parent="." instance=ExtResource("4_jm8m2")]
 z_index = 4
-position = Vector2(75, 86)
+position = Vector2(75, 85)
 action_name = "ascend stairs"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StairsInteract"]
