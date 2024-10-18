@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Modify this value to change the speed of the character
-const speed = 100
+const speed = 175
 
 enum dirs {LEFT, RIGHT, UP, DOWN}
 
