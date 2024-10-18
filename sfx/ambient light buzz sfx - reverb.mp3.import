@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgneuk0liiwgq"
+path="res://.godot/imported/ambient light buzz sfx - reverb.mp3-d7e66dc61ef78e2de52d7a974b3d4297.mp3str"
+
+[deps]
+
+source_file="res://sfx/ambient light buzz sfx - reverb.mp3"
+dest_files=["res://.godot/imported/ambient light buzz sfx - reverb.mp3-d7e66dc61ef78e2de52d7a974b3d4297.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

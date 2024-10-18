@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crexvirn4uqx4"
+path="res://.godot/imported/standard right step.mp3-0a39ccfb04aa5463910b17823afcbdca.mp3str"
+
+[deps]
+
+source_file="res://sfx/standard right step.mp3"
+dest_files=["res://.godot/imported/standard right step.mp3-0a39ccfb04aa5463910b17823afcbdca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
