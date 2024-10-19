@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://jbge7wnxm21x"]
+[gd_scene load_steps=25 format=4 uid="uid://jbge7wnxm21x"]
 
 [ext_resource type="Script" path="res://scripts/storeFloor.gd" id="1_ufkm3"]
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="2_87avc"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://p7s6p7twu46w" path="res://Interaction/Interaction area/interaction_area.tscn" id="4_qcwaf"]
 [ext_resource type="Script" path="res://scripts/item_interact.gd" id="5_d2t3p"]
 [ext_resource type="PackedScene" uid="uid://csw2yiahr5usn" path="res://scenes/enemy.tscn" id="6_8soyc"]
-[ext_resource type="Script" path="res://scenes/enemy_pathing.gd" id="6_fwjxu"]
+[ext_resource type="Script" path="res://scripts/enemy_pathing.gd" id="6_76eep"]
 [ext_resource type="AudioStream" uid="uid://bgneuk0liiwgq" path="res://sfx/ambient light buzz sfx - reverb.mp3" id="6_rtdwq"]
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="6_u73kj"]
 [ext_resource type="Texture2D" uid="uid://5bmgvd3iskye" path="res://Placeholder Sprites/invicons/ramen.png" id="7_x0154"]
@@ -289,7 +289,7 @@ curve = SubResource("Curve2D_t3py5")
 position = Vector2(64, 379)
 rotation = -1.57649
 rotates = false
-script = ExtResource("6_fwjxu")
+script = ExtResource("6_76eep")
 
 [node name="Enemy" parent="EnemyPath/PathFollow2D" instance=ExtResource("6_8soyc")]
 z_index = 1
@@ -301,7 +301,6 @@ collision_mask = 2
 [node name="Player" parent="." instance=ExtResource("3_8qdux")]
 z_index = 1
 position = Vector2(772, 21)
-inv = null
 
 [node name="Ramen" type="Node2D" parent="." node_paths=PackedStringArray("interaction")]
 script = ExtResource("5_d2t3p")
