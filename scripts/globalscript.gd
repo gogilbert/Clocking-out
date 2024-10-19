@@ -1,6 +1,6 @@
 extends Node
 
-var current_scene = "storeFloor"
+var current_scene = "break_room"
 var from_scene = "";
 var transition_scene = false
 
