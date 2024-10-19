@@ -6,6 +6,11 @@ extends Node2D
 
 func _ready():
 	interaction.interact = Callable(self, "_on_interact_item")
+	
+	for i in range(len(player.inv.slots)):
+		if player.inv.slots[i].item != null:
+			if player.inv.slots[i].item.name == item.name:
+				self.queue_free()
 
 func _on_interact_item():
 	player.collect(item)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6c0ndj6e834k"]
 
-[ext_resource type="Texture2D" uid="uid://hfq2huluokbh" path="res://Placeholder Sprites/invicons/inventory-slot.png" id="1_8xlbk"]
+[ext_resource type="Texture2D" uid="uid://c4jh5ihjv80fv" path="res://Placeholder Sprites/invicons/inventory-slot.png" id="1_8xlbk"]
 [ext_resource type="Script" path="res://inventory/inv_ui_slot.gd" id="1_clbeq"]
 
 [node name="inv_UI_slot" type="Panel"]

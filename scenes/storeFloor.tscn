@@ -1,16 +1,18 @@
-[gd_scene load_steps=14 format=4 uid="uid://jbge7wnxm21x"]
+[gd_scene load_steps=24 format=4 uid="uid://jbge7wnxm21x"]
 
 [ext_resource type="Script" path="res://scripts/storeFloor.gd" id="1_ufkm3"]
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="2_87avc"]
 [ext_resource type="Texture2D" uid="uid://dtwct7pg1hopp" path="res://Sprites/Grocery_Store_Tile_Map.png" id="2_avudr"]
 [ext_resource type="PackedScene" uid="uid://w6cigjklhxi4" path="res://scenes/player.tscn" id="3_8qdux"]
 [ext_resource type="PackedScene" uid="uid://p7s6p7twu46w" path="res://Interaction/Interaction area/interaction_area.tscn" id="4_qcwaf"]
-[ext_resource type="AudioStream" uid="uid://bgneuk0liiwgq" path="res://sfx/ambient light buzz sfx - reverb.mp3" id="6_rtdwq"]
+[ext_resource type="Script" path="res://scripts/item_interact.gd" id="5_d2t3p"]
 [ext_resource type="PackedScene" uid="uid://csw2yiahr5usn" path="res://scenes/enemy.tscn" id="6_8soyc"]
 [ext_resource type="Script" path="res://scenes/enemy_pathing.gd" id="6_fwjxu"]
-[ext_resource type="Script" path="res://scripts/item_interact.gd" id="5_d2t3p"]
+[ext_resource type="AudioStream" uid="uid://bgneuk0liiwgq" path="res://sfx/ambient light buzz sfx - reverb.mp3" id="6_rtdwq"]
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="6_u73kj"]
-[ext_resource type="Texture2D" uid="uid://bl6egyvbhkd4m" path="res://Placeholder Sprites/invicons/ramen.png" id="7_x0154"]
+[ext_resource type="Texture2D" uid="uid://5bmgvd3iskye" path="res://Placeholder Sprites/invicons/ramen.png" id="7_x0154"]
+[ext_resource type="Texture2D" uid="uid://bsbu74o4s2rxi" path="res://Placeholder Sprites/invicons/glue.png" id="12_bccpb"]
+[ext_resource type="Texture2D" uid="uid://buyy7l2c0j8fm" path="res://Placeholder Sprites/invicons/plate.png" id="13_awxe4"]
 
 [sub_resource type="GDScript" id="GDScript_iqd57"]
 
@@ -207,6 +209,16 @@ texture = ExtResource("7_x0154")
 [sub_resource type="CircleShape2D" id="CircleShape2D_aii8j"]
 radius = 23.0
 
+[sub_resource type="Resource" id="Resource_6ahhl"]
+script = ExtResource("6_u73kj")
+name = "Glue"
+texture = ExtResource("12_bccpb")
+
+[sub_resource type="Resource" id="Resource_avhob"]
+script = ExtResource("6_u73kj")
+name = "Plate"
+texture = ExtResource("13_awxe4")
+
 [node name="storeFloor" type="Node2D"]
 script = ExtResource("1_ufkm3")
 
@@ -304,3 +316,41 @@ shape = SubResource("CircleShape2D_aii8j")
 z_index = 1
 position = Vector2(720, 210)
 texture = ExtResource("7_x0154")
+
+[node name="Glue" type="Node2D" parent="." node_paths=PackedStringArray("interaction")]
+position = Vector2(-642, -87)
+script = ExtResource("5_d2t3p")
+item = SubResource("Resource_6ahhl")
+interaction = NodePath("GlueInteract")
+
+[node name="GlueInteract" parent="Glue" instance=ExtResource("4_qcwaf")]
+z_index = 1
+position = Vector2(720, 210)
+action_name = "pickup glue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Glue/GlueInteract"]
+shape = SubResource("CircleShape2D_aii8j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Glue"]
+z_index = 1
+position = Vector2(720, 210)
+texture = ExtResource("12_bccpb")
+
+[node name="Plate" type="Node2D" parent="." node_paths=PackedStringArray("interaction")]
+position = Vector2(383, -179)
+script = ExtResource("5_d2t3p")
+item = SubResource("Resource_avhob")
+interaction = NodePath("PlateInteract")
+
+[node name="PlateInteract" parent="Plate" instance=ExtResource("4_qcwaf")]
+z_index = 1
+position = Vector2(720, 210)
+action_name = "pickup plate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate/PlateInteract"]
+shape = SubResource("CircleShape2D_aii8j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Plate"]
+z_index = 1
+position = Vector2(720, 210)
+texture = ExtResource("13_awxe4")

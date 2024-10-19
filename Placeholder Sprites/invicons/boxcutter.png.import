@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buyy7l2c0j8fm"
-path="res://.godot/imported/plate.png-474be219416dd013f08a0e9fa57fc3b4.ctex"
+uid="uid://dyopbiwlai6k7"
+path="res://.godot/imported/boxcutter.png-01a169e26e655c650e6d6ce549653d87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Placeholder Sprites/invicons/plate.png"
-dest_files=["res://.godot/imported/plate.png-474be219416dd013f08a0e9fa57fc3b4.ctex"]
+source_file="res://Placeholder Sprites/invicons/boxcutter.png"
+dest_files=["res://.godot/imported/boxcutter.png-01a169e26e655c650e6d6ce549653d87.ctex"]
 
 [params]
 
