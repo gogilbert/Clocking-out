@@ -7,6 +7,7 @@ enum dirs {LEFT, RIGHT, UP, DOWN}
 
 var facingDir = dirs.DOWN
 
+@export var inv: Inv
 
 func _ready():
 	$AnimatedSprite2D.play("down_idle")
@@ -95,4 +96,6 @@ func player_movement(delta: float):
 
 	# Moves the player based off of the new velocity values you've set
 	move_and_slide()
-	
+
+func collect(item):
+	inv.insert(item)
