@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmeel2uxltrjk"]
+
+[ext_resource type="Texture2D" uid="uid://cdr2o38dw3vyj" path="res://Sprites/Clocking Out Title Screen.png" id="1_ynlu6"]
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="2_1mtx8"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_ynlu6")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_1mtx8")

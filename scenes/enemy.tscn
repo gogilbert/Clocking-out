@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://csw2yiahr5usn"]
+[gd_scene load_steps=8 format=3 uid="uid://csw2yiahr5usn"]
 
 [ext_resource type="Texture2D" uid="uid://p3u4te2v0tnk" path="res://Sprites/guy.png" id="1_6lext"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_27h00"]
@@ -24,11 +24,15 @@ radius = 105.005
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dst0c"]
 size = Vector2(32, 24)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1h12"]
+radius = 23.0
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_27h00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.843137)
 sprite_frames = SubResource("SpriteFrames_wsahw")
 
@@ -43,5 +47,15 @@ shape = SubResource("CircleShape2D_nk63t")
 position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_dst0c")
 
+[node name="Death" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death"]
+position = Vector2(-1, 21)
+shape = SubResource("CircleShape2D_u1h12")
+disabled = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Death" to="." method="_on_death_body_shape_entered"]

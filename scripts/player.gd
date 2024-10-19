@@ -45,57 +45,57 @@ func setAnim(action: int):
 					animNode.play("walk_down")
 
 func player_movement(delta: float):
-	
-	# Determines the movement action of the player
-	if Input.is_action_pressed("ui_right"):
-		if not $WalkNoise.is_playing():
-			$WalkNoise.play()
-		velocity.x = speed
-		velocity.y = 0
-		
-		# Setting up the variables so the right animation is selected
-		facingDir = dirs.RIGHT
-		setAnim(1);
-		
-	elif Input.is_action_pressed("ui_left"):
-		if not $WalkNoise.is_playing():
-			$WalkNoise.play()
-		velocity.x = -speed
-		velocity.y = 0
+	if !DialogManager.is_dialog_active:
+		# Determines the movement action of the player
+		if Input.is_action_pressed("ui_right"):
+			if not $WalkNoise.is_playing():
+				$WalkNoise.play()
+			velocity.x = speed
+			velocity.y = 0
+			
+			# Setting up the variables so the right animation is selected
+			facingDir = dirs.RIGHT
+			setAnim(1);
+			
+		elif Input.is_action_pressed("ui_left"):
+			if not $WalkNoise.is_playing():
+				$WalkNoise.play()
+			velocity.x = -speed
+			velocity.y = 0
 
-		# Setting up the variables so the right animation is selected
-		facingDir = dirs.LEFT
-		setAnim(1);
+			# Setting up the variables so the right animation is selected
+			facingDir = dirs.LEFT
+			setAnim(1);
 
-	elif Input.is_action_pressed("ui_up"):
-		if not $WalkNoise.is_playing():
-			$WalkNoise.play()
-		velocity.x = 0
-		velocity.y = -speed
+		elif Input.is_action_pressed("ui_up"):
+			if not $WalkNoise.is_playing():
+				$WalkNoise.play()
+			velocity.x = 0
+			velocity.y = -speed
 
-		# Setting up the variables so the right animation is selected
-		facingDir = dirs.UP
-		setAnim(1);
+			# Setting up the variables so the right animation is selected
+			facingDir = dirs.UP
+			setAnim(1);
 
-	elif Input.is_action_pressed("ui_down"):
-		if not $WalkNoise.is_playing():
-			$WalkNoise.play()
-		velocity.x = 0
-		velocity.y = speed
-		
-		# Setting up the variables so the right animation is selected
-		facingDir = dirs.DOWN
-		setAnim(1);
+		elif Input.is_action_pressed("ui_down"):
+			if not $WalkNoise.is_playing():
+				$WalkNoise.play()
+			velocity.x = 0
+			velocity.y = speed
+			
+			# Setting up the variables so the right animation is selected
+			facingDir = dirs.DOWN
+			setAnim(1);
 
-	else:
-		if $WalkNoise.is_playing():
-			$WalkNoise.stop()
-		velocity.x = 0
-		velocity.y = 0
-		setAnim(0);
+		else:
+			if $WalkNoise.is_playing():
+				$WalkNoise.stop()
+			velocity.x = 0
+			velocity.y = 0
+			setAnim(0);
 
-	# Moves the player based off of the new velocity values you've set
-	move_and_slide()
+		# Moves the player based off of the new velocity values you've set
+		move_and_slide()
 
 func collect(item):
 	inv.insert(item)

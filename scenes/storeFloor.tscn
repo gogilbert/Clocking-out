@@ -219,6 +219,9 @@ script = ExtResource("6_u73kj")
 name = "Plate"
 texture = ExtResource("13_awxe4")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuerd"]
+size = Vector2(11.4441, 11.6258)
+
 [node name="storeFloor" type="Node2D"]
 script = ExtResource("1_ufkm3")
 
@@ -298,6 +301,7 @@ collision_mask = 2
 [node name="Player" parent="." instance=ExtResource("3_8qdux")]
 z_index = 1
 position = Vector2(772, 21)
+inv = null
 
 [node name="Ramen" type="Node2D" parent="." node_paths=PackedStringArray("interaction")]
 script = ExtResource("5_d2t3p")
@@ -354,3 +358,13 @@ shape = SubResource("CircleShape2D_aii8j")
 z_index = 1
 position = Vector2(720, 210)
 texture = ExtResource("13_awxe4")
+
+[node name="FrontInteract" parent="." instance=ExtResource("4_qcwaf")]
+z_index = 15
+position = Vector2(737, 480)
+action_name = "open front door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontInteract"]
+position = Vector2(-0.999985, -0.999985)
+scale = Vector2(5.505, 5.505)
+shape = SubResource("RectangleShape2D_fuerd")
