@@ -25,6 +25,7 @@ func _ready():
 			$Player.position.x = 148
 			$Player.position.y = 75
 
+
 func _on_interact_doorL():
 	Globalscript.transition_scene = true
 	Globalscript.from_scene = "doorL"

@@ -216,7 +216,7 @@ tile_set = SubResource("TileSet_dr80h")
 
 [node name="Player" parent="." instance=ExtResource("3_naadj")]
 z_index = 1
-position = Vector2(321, 153)
+position = Vector2(282.92, 153)
 
 [node name="StairsInteract" parent="." instance=ExtResource("4_y5boa")]
 z_index = 15
@@ -227,6 +227,18 @@ action_name = "descend stairs"
 position = Vector2(-0.999985, -0.999985)
 scale = Vector2(5.505, 5.505)
 shape = SubResource("RectangleShape2D_b3w3x")
+disabled = true
+
+[node name="SleepInteract" parent="." instance=ExtResource("4_y5boa")]
+z_index = 15
+position = Vector2(31, 160)
+action_name = "sleep"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SleepInteract"]
+position = Vector2(-0.999985, -0.999985)
+scale = Vector2(5.505, 5.505)
+shape = SubResource("RectangleShape2D_b3w3x")
+disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_hvntm")
@@ -234,9 +246,9 @@ autoplay = true
 
 [node name="DarkerTint" type="ColorRect" parent="."]
 z_index = 2
-offset_left = 1138.0
+offset_left = 681.0
 offset_top = 547.0
-offset_right = 1339.0
+offset_right = 882.0
 offset_bottom = 654.0
 scale = Vector2(-6.765, -6.765)
-color = Color(0, 0, 0, 0.588235)
+color = Color(0, 0, 0, 0)
