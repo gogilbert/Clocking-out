@@ -1,7 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://w6cigjklhxi4"]
+[gd_scene load_steps=43 format=3 uid="uid://w6cigjklhxi4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_q0y3e"]
 [ext_resource type="Texture2D" uid="uid://s24u3od8o8b6" path="res://Placeholder Sprites/characters/player.png" id="2_c4863"]
+[ext_resource type="Resource" uid="uid://bymxekqf1q276" path="res://inventory/playerinv.tres" id="2_e2yol"]
+[ext_resource type="PackedScene" uid="uid://corkoe77jmvuy" path="res://inventory/inv_ui.tscn" id="4_itiey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewwag"]
 size = Vector2(24, 18)
@@ -294,6 +296,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_q0y3e")
+inv = ExtResource("2_e2yol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 25)
@@ -307,3 +310,14 @@ frame_progress = 0.0768274
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.65, 0.65)
+
+[node name="Inv_UI" parent="." instance=ExtResource("4_itiey")]
+offset_left = -58.0
+offset_top = -88.0
+offset_right = 58.0
+offset_bottom = -10.0
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Inv_UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
