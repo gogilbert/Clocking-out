@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dtwct7pg1hopp" path="res://Sprites/Grocery_Store_Tile_Map.png" id="2_avudr"]
 [ext_resource type="PackedScene" uid="uid://w6cigjklhxi4" path="res://scenes/player.tscn" id="3_8qdux"]
 [ext_resource type="PackedScene" uid="uid://p7s6p7twu46w" path="res://Interaction/Interaction area/interaction_area.tscn" id="4_qcwaf"]
-[ext_resource type="AudioStream" uid="uid://bgneuk0liiwgq" path="res://sfx/ambient light buzz sfx - reverb.mp3" id="6_rtdwq"]
 [ext_resource type="PackedScene" uid="uid://csw2yiahr5usn" path="res://scenes/enemy.tscn" id="6_8soyc"]
 [ext_resource type="Script" path="res://scenes/enemy_pathing.gd" id="6_fwjxu"]
 
@@ -199,15 +198,6 @@ point_count = 28
 [node name="storeFloor" type="Node2D"]
 script = ExtResource("1_ufkm3")
 
-[node name="DarkerTint" type="ColorRect" parent="."]
-z_index = 2
-offset_left = 1270.0
-offset_top = 546.0
-offset_right = 1471.0
-offset_bottom = 653.0
-scale = Vector2(-6.765, -6.765)
-color = Color(0, 0, 0, 0.588235)
-
 [node name="TileMap" type="Node" parent="."]
 script = SubResource("GDScript_iqd57")
 
@@ -233,7 +223,7 @@ tile_set = SubResource("TileSet_f4l4h")
 
 [node name="Player" parent="." instance=ExtResource("3_8qdux")]
 z_index = 1
-position = Vector2(262, 2)
+position = Vector2(772, 21)
 
 [node name="DoorLInteract" parent="." instance=ExtResource("4_qcwaf")]
 z_index = 4
@@ -253,10 +243,6 @@ position = Vector2(2, 8)
 scale = Vector2(5.505, 5.505)
 shape = SubResource("CircleShape2D_3frkl")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_rtdwq")
-autoplay = true
-
 [node name="EnemyPath" type="Path2D" parent="."]
 z_index = 1
 position = Vector2(0, -3.74929)
@@ -271,7 +257,17 @@ script = ExtResource("6_fwjxu")
 
 [node name="Enemy" parent="EnemyPath/PathFollow2D" instance=ExtResource("6_8soyc")]
 z_index = 1
-rotation = 1.5708
+position = Vector2(0.887604, -0.994956)
+rotation = 1.57649
 scale = Vector2(1, 0.881909)
 collision_layer = 1
 collision_mask = 2
+
+[node name="DarkerTint" type="ColorRect" parent="."]
+z_index = 2
+offset_left = 1270.0
+offset_top = 546.0
+offset_right = 1471.0
+offset_bottom = 653.0
+scale = Vector2(-6.765, -6.765)
+color = Color(0, 0, 0, 0.588235)

@@ -4,6 +4,9 @@ var current_scene = "break_room"
 var from_scene = "";
 var transition_scene = false
 
+var enemy_chasing = false
+var enemy_prevPosition = null
+
 func changeScene():
 	if transition_scene == true:
 		transition_scene = false

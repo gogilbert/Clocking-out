@@ -231,3 +231,12 @@ shape = SubResource("RectangleShape2D_b3w3x")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_hvntm")
 autoplay = true
+
+[node name="DarkerTint" type="ColorRect" parent="."]
+z_index = 2
+offset_left = 1138.0
+offset_top = 547.0
+offset_right = 1339.0
+offset_bottom = 654.0
+scale = Vector2(-6.765, -6.765)
+color = Color(0, 0, 0, 0.588235)

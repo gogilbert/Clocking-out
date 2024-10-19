@@ -10,7 +10,6 @@ class_name InteractionArea
 var interact: Callable = func():
 	pass
 
-
 func _on_body_entered(body) -> void:
 	# register this area in the interaction manager
 	if body == player:
