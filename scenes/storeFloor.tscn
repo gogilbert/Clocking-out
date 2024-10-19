@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://jbge7wnxm21x"]
+[gd_scene load_steps=21 format=4 uid="uid://jbge7wnxm21x"]
 
 [ext_resource type="Script" path="res://scripts/storeFloor.gd" id="1_ufkm3"]
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="2_87avc"]
@@ -207,6 +207,9 @@ texture = ExtResource("7_x0154")
 [sub_resource type="CircleShape2D" id="CircleShape2D_aii8j"]
 radius = 23.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuerd"]
+size = Vector2(11.4441, 11.6258)
+
 [node name="storeFloor" type="Node2D"]
 script = ExtResource("1_ufkm3")
 
@@ -304,3 +307,13 @@ shape = SubResource("CircleShape2D_aii8j")
 z_index = 1
 position = Vector2(720, 210)
 texture = ExtResource("7_x0154")
+
+[node name="FrontInteract" parent="." instance=ExtResource("4_qcwaf")]
+z_index = 15
+position = Vector2(737, 480)
+action_name = "open front door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontInteract"]
+position = Vector2(-0.999985, -0.999985)
+scale = Vector2(5.505, 5.505)
+shape = SubResource("RectangleShape2D_fuerd")
