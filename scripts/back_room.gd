@@ -4,6 +4,7 @@ extends Node2D
 @onready var doorR: InteractionArea = $DoorRInteract
 @onready var stairs: InteractionArea = $StairsInteract
 
+
 func _process(delta):
 	change_scene()
 
@@ -27,10 +28,12 @@ func _ready():
 func _on_interact_doorL():
 	Globalscript.transition_scene = true
 	Globalscript.from_scene = "doorL"
+	AudioController.play_door()
 
 func _on_interact_doorR():
 	Globalscript.transition_scene = true
 	Globalscript.from_scene = "doorR"
+	AudioController.play_door()
 	
 func _on_interact_stairs():
 	Globalscript.transition_scene = true

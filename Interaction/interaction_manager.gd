@@ -11,11 +11,12 @@ var can_interact = true
 func setInteract(interact: InteractionArea):
 	active_interact = interact
 
+@warning_ignore("unused_parameter")
 func removeInteract(interact: InteractionArea):
 	if active_interact:
 		active_interact = null
 
-func _process(delta):
+func _process(_delta):
 	#If there is an active interact, update the label
 	if active_interact != null && can_interact:
 		label.text = base_text + active_interact.action_name

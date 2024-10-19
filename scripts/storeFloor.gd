@@ -21,10 +21,12 @@ func _process(delta):
 func _on_interact_doorL():
 	Globalscript.transition_scene = true
 	Globalscript.from_scene = "doorL"
+	AudioController.play_door()
 
 func _on_interact_doorR():
 	Globalscript.transition_scene = true
 	Globalscript.from_scene = "doorR"
+	AudioController.play_door()
 
 func change_scene():
 	if Globalscript.transition_scene == true:

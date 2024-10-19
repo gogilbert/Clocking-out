@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://jbge7wnxm21x"]
+[gd_scene load_steps=12 format=4 uid="uid://jbge7wnxm21x"]
 
 [ext_resource type="Script" path="res://scripts/storeFloor.gd" id="1_ufkm3"]
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="2_87avc"]
 [ext_resource type="Texture2D" uid="uid://dtwct7pg1hopp" path="res://Sprites/Grocery_Store_Tile_Map.png" id="2_avudr"]
 [ext_resource type="PackedScene" uid="uid://w6cigjklhxi4" path="res://scenes/player.tscn" id="3_8qdux"]
 [ext_resource type="PackedScene" uid="uid://p7s6p7twu46w" path="res://Interaction/Interaction area/interaction_area.tscn" id="4_qcwaf"]
+[ext_resource type="AudioStream" uid="uid://bgneuk0liiwgq" path="res://sfx/ambient light buzz sfx - reverb.mp3" id="6_rtdwq"]
 
 [sub_resource type="GDScript" id="GDScript_iqd57"]
 
@@ -234,3 +235,7 @@ position = Vector2(750, -40)
 position = Vector2(2, 8)
 scale = Vector2(5.505, 5.505)
 shape = SubResource("CircleShape2D_3frkl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rtdwq")
+autoplay = true

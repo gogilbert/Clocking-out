@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://w6cigjklhxi4"]
+[gd_scene load_steps=42 format=3 uid="uid://w6cigjklhxi4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_q0y3e"]
 [ext_resource type="Texture2D" uid="uid://s24u3od8o8b6" path="res://Placeholder Sprites/characters/player.png" id="2_c4863"]
+[ext_resource type="AudioStream" uid="uid://cgs386dlvc8qt" path="res://sfx/standard walk cycle.mp3" id="3_gpk2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewwag"]
 size = Vector2(24, 18)
@@ -307,3 +308,6 @@ frame_progress = 0.0768274
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.65, 0.65)
+
+[node name="WalkNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gpk2j")

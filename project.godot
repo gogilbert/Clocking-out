@@ -19,6 +19,7 @@ config/icon="res://Placeholder Sprites/icon.svg"
 
 Globalscript="*res://scripts/globalscript.gd"
 InteractionManager="*res://Interaction/InteractionManager.tscn"
+AudioController="*res://scenes/audio_controller.tscn"
 
 [display]
 

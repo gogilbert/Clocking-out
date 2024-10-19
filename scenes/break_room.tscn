@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://dr30k777d2kdp"]
+[gd_scene load_steps=12 format=4 uid="uid://dr30k777d2kdp"]
 
 [ext_resource type="Script" path="res://scripts/break_room.gd" id="1_pexip"]
 [ext_resource type="Texture2D" uid="uid://dtwct7pg1hopp" path="res://Sprites/Grocery_Store_Tile_Map.png" id="2_neowp"]
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="2_raxie"]
 [ext_resource type="PackedScene" uid="uid://w6cigjklhxi4" path="res://scenes/player.tscn" id="3_naadj"]
 [ext_resource type="PackedScene" uid="uid://p7s6p7twu46w" path="res://Interaction/Interaction area/interaction_area.tscn" id="4_y5boa"]
+[ext_resource type="AudioStream" uid="uid://ds6t7put7jjwj" path="res://sfx/air conditioner sfx (w compressor sound).mp3" id="6_hvntm"]
 
 [sub_resource type="GDScript" id="GDScript_wqeyt"]
 
@@ -226,3 +227,7 @@ action_name = "descend stairs"
 position = Vector2(-0.999985, -0.999985)
 scale = Vector2(5.505, 5.505)
 shape = SubResource("RectangleShape2D_b3w3x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hvntm")
+autoplay = true

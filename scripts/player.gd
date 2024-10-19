@@ -7,6 +7,7 @@ enum dirs {LEFT, RIGHT, UP, DOWN}
 
 var facingDir = dirs.DOWN
 
+
 func _ready():
 	$AnimatedSprite2D.play("down_idle")
 
@@ -46,6 +47,8 @@ func player_movement(delta: float):
 	
 	# Determines the movement action of the player
 	if Input.is_action_pressed("ui_right"):
+		if not $WalkNoise.is_playing():
+			$WalkNoise.play()
 		velocity.x = speed
 		velocity.y = 0
 		
@@ -54,6 +57,8 @@ func player_movement(delta: float):
 		setAnim(1);
 		
 	elif Input.is_action_pressed("ui_left"):
+		if not $WalkNoise.is_playing():
+			$WalkNoise.play()
 		velocity.x = -speed
 		velocity.y = 0
 
@@ -62,6 +67,8 @@ func player_movement(delta: float):
 		setAnim(1);
 
 	elif Input.is_action_pressed("ui_up"):
+		if not $WalkNoise.is_playing():
+			$WalkNoise.play()
 		velocity.x = 0
 		velocity.y = -speed
 
@@ -70,6 +77,8 @@ func player_movement(delta: float):
 		setAnim(1);
 
 	elif Input.is_action_pressed("ui_down"):
+		if not $WalkNoise.is_playing():
+			$WalkNoise.play()
 		velocity.x = 0
 		velocity.y = speed
 		
@@ -78,9 +87,12 @@ func player_movement(delta: float):
 		setAnim(1);
 
 	else:
+		if $WalkNoise.is_playing():
+			$WalkNoise.stop()
 		velocity.x = 0
 		velocity.y = 0
 		setAnim(0);
 
 	# Moves the player based off of the new velocity values you've set
 	move_and_slide()
+	
