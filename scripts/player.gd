@@ -49,12 +49,12 @@ func player_movement(delta: float):
 		get_tree().quit()
 
 	if !DialogManager.is_dialog_active && !Globalscript.hiding:
+		var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		velocity = direction * speed
 		# Determines the movement action of the player
 		if Input.is_action_pressed("ui_right"):
 			if not $WalkNoise.is_playing():
 				$WalkNoise.play()
-			velocity.x = speed
-			velocity.y = 0
 			
 			# Setting up the variables so the right animation is selected
 			facingDir = dirs.RIGHT
@@ -63,8 +63,6 @@ func player_movement(delta: float):
 		elif Input.is_action_pressed("ui_left"):
 			if not $WalkNoise.is_playing():
 				$WalkNoise.play()
-			velocity.x = -speed
-			velocity.y = 0
 
 			# Setting up the variables so the right animation is selected
 			facingDir = dirs.LEFT
@@ -73,8 +71,6 @@ func player_movement(delta: float):
 		elif Input.is_action_pressed("ui_up"):
 			if not $WalkNoise.is_playing():
 				$WalkNoise.play()
-			velocity.x = 0
-			velocity.y = -speed
 
 			# Setting up the variables so the right animation is selected
 			facingDir = dirs.UP
@@ -83,8 +79,6 @@ func player_movement(delta: float):
 		elif Input.is_action_pressed("ui_down"):
 			if not $WalkNoise.is_playing():
 				$WalkNoise.play()
-			velocity.x = 0
-			velocity.y = speed
 			
 			# Setting up the variables so the right animation is selected
 			facingDir = dirs.DOWN
@@ -93,8 +87,6 @@ func player_movement(delta: float):
 		else:
 			if $WalkNoise.is_playing():
 				$WalkNoise.stop()
-			velocity.x = 0
-			velocity.y = 0
 			setAnim(0);
 
 		# Moves the player based off of the new velocity values you've set
