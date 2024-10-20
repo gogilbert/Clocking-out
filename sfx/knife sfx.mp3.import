@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccaafrthbtuwe"
+path="res://.godot/imported/knife sfx.mp3-5bd7eab1c4b12be28d8cee5dd5c67f3e.mp3str"
+
+[deps]
+
+source_file="res://sfx/knife sfx.mp3"
+dest_files=["res://.godot/imported/knife sfx.mp3-5bd7eab1c4b12be28d8cee5dd5c67f3e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

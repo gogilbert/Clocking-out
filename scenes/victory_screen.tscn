@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ei38y8d0ngxn"]
+[gd_scene load_steps=5 format=3 uid="uid://ei38y8d0ngxn"]
 
 [ext_resource type="Texture2D" uid="uid://cedihk134jrt8" path="res://Sprites/Victory_Screen.png" id="1_lcljd"]
 [ext_resource type="Script" path="res://scripts/deathscreen.gd" id="2_o4bcm"]
+[ext_resource type="AudioStream" uid="uid://bgneuk0liiwgq" path="res://sfx/ambient light buzz sfx - reverb.mp3" id="3_fs1cx"]
+[ext_resource type="AudioStream" uid="uid://cl748gtf70c6m" path="res://sfx/(short) Yippee sound effect!!.mp3" id="3_s32re"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,3 +22,11 @@ texture = ExtResource("1_lcljd")
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("2_o4bcm")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fs1cx")
+autoplay = true
+
+[node name="YIPPEE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_s32re")
+autoplay = true

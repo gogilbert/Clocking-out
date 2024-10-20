@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8jd2245yahno"]
+[gd_scene load_steps=5 format=3 uid="uid://c8jd2245yahno"]
 
 [ext_resource type="Texture2D" uid="uid://dtfg53fa0bi7g" path="res://Sprites/Death_Screen.png" id="1_hts11"]
 [ext_resource type="Script" path="res://scripts/deathscreen.gd" id="2_qbfbe"]
+[ext_resource type="AudioStream" uid="uid://ccaafrthbtuwe" path="res://sfx/knife sfx.mp3" id="3_g2xrt"]
+[ext_resource type="AudioStream" uid="uid://bgneuk0liiwgq" path="res://sfx/ambient light buzz sfx - reverb.mp3" id="4_2eo3d"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,3 +22,11 @@ texture = ExtResource("1_hts11")
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("2_qbfbe")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_g2xrt")
+autoplay = true
+
+[node name="Music2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2eo3d")
+autoplay = true

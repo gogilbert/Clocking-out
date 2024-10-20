@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cl748gtf70c6m"
+path="res://.godot/imported/(short) Yippee sound effect!!.mp3-b6312fec874ec2329f9a6b31eff5510a.mp3str"
+
+[deps]
+
+source_file="res://sfx/(short) Yippee sound effect!!.mp3"
+dest_files=["res://.godot/imported/(short) Yippee sound effect!!.mp3-b6312fec874ec2329f9a6b31eff5510a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
