@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var player = get_tree().get_first_node_in_group("player")
 @onready var doorL: InteractionArea = $DoorLInteract
 @onready var doorR: InteractionArea = $DoorRInteract
 @onready var stairs: InteractionArea = $StairsInteract
@@ -9,7 +10,17 @@ const lockedExitLines: Array[String] = [
 	"The door won't budge. I must be missing some more items...",
 ]
 
+const unlockedExitLines: Array[String] = [
+	"I guess it's time to jam this all in!",
+	"* Places items in keyhole *",
+	"* The door opens *",
+	"Wow! I can't believe that guy from the poster was right!",
+	"Let's get out of here!"
+]
+
 func _process(delta):
+	if Globalscript.currentState == 8 && !DialogManager.is_dialog_active:
+		get_tree().change_scene_to_file("res://scenes/victory_screen.tscn")
 	change_scene()
 
 func _ready():
@@ -51,8 +62,18 @@ func _on_interact_stairs():
 	Globalscript.from_scene = "stairs"
 
 func _on_interact_exit():
-	DialogManager.start_dialog($Player.position, lockedExitLines)
+	var requiredItems = ["Ramen", "Boxcutter", "Glue", "Plate"]
 	
+	for i in range(len(player.inv.slots)):
+		if player.inv.slots[i].item != null:
+			if player.inv.slots[i].item.name in requiredItems:
+				requiredItems.erase(player.inv.slots[i].item.name)
+	
+	if len(requiredItems) > 0:
+		DialogManager.start_dialog($Player.position, lockedExitLines)
+	else:
+		DialogManager.start_dialog($Player.position, unlockedExitLines)
+		Globalscript.currentState = 8
 
 func change_scene():
 	if Globalscript.transition_scene == true:

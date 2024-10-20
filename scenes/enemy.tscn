@@ -135,7 +135,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nk63t"]
-radius = 105.005
+radius = 181.003
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dst0c"]
 size = Vector2(32, 24)
@@ -148,6 +148,7 @@ collision_layer = 2
 script = ExtResource("1_27h00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-22, 4)
 sprite_frames = SubResource("SpriteFrames_wsahw")
 animation = &"idle"

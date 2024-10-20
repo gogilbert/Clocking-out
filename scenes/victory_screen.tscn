@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8jd2245yahno"]
+[gd_scene load_steps=2 format=3 uid="uid://ei38y8d0ngxn"]
 
-[ext_resource type="Texture2D" uid="uid://dtfg53fa0bi7g" path="res://Sprites/Death_Screen.png" id="1_hts11"]
+[ext_resource type="Texture2D" uid="uid://cedihk134jrt8" path="res://Sprites/Victory_Screen.png" id="1_lcljd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,6 +15,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(1.8, 1.8)
-texture = ExtResource("1_hts11")
+texture = ExtResource("1_lcljd")
 
 [node name="Node2D" type="Node2D" parent="."]

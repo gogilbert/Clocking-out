@@ -20,6 +20,8 @@ const keyPosterLines: Array[String] = [
 	"\"I once had to figure out how to make a key using items in the store!\"",
 	"\"All I needed was a plate, a boxcutter, glue, and a pack of ramen.\"",
 	"\"I know this makes no sense, but I jammed it all into the keyhole and it f***ing opened!\"",
+	"\"...\"",
+	"\"Oh and by the way, you can open/close your inventory with R\"",
 	"Hmmm, desperate times call for desperate measures. I might as well try it..." 
 ]
 
@@ -31,6 +33,8 @@ func _process(delta):
 	change_scene()
 
 func _ready():
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
+		
 	stairs.interact = Callable(self, "_on_interact_stairs")
 	SleepInteract.interact = Callable(self, "_on_interact_sleep")
 	KeyPosterInteract.interact = Callable(self, "_on_interact_keyposter")

@@ -334,13 +334,13 @@ texture_scale = 0.4
 
 [node name="ExitInteract" parent="." instance=ExtResource("4_jm8m2")]
 z_index = 15
-position = Vector2(314, 141)
+position = Vector2(192, 117)
 rotation = 3.14159
 scale = Vector2(6.765, 6.765)
 action_name = "exit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitInteract"]
-position = Vector2(18.034, 14.3385)
+position = Vector2(-2.91169e-05, 11.0865)
 scale = Vector2(5.505, 5.505)
 shape = SubResource("RectangleShape2D_mm6d3")
 disabled = true

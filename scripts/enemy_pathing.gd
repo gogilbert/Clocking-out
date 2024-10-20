@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-var speed = 0.01
+var speed = 0.03
 
 func _ready() -> void:
 	progress_ratio = Globalscript.enemy_prevPosition

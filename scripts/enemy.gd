@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 50
+var speed = 100
 
 var chase = false
 
@@ -25,10 +25,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	player = body
 	chase = true
 	Globalscript.enemy_chasing = true
-	speed = 50
+	speed = 165
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	speed = 50
+	speed = 100
 	chase = false
 
 func _on_death_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
