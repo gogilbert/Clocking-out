@@ -12,6 +12,11 @@ const enemyText: Array[String] = [
 	"Who's there?"
 ]
 
+const escapeText: Array[String] = [
+	"I gotta get out of here!",
+	"Maybe I should hide in the break room..."
+]
+
 func _ready():
 	doorL.interact = Callable(self, "_on_interact_doorL")
 	doorR.interact = Callable(self, "_on_interact_doorR")
@@ -34,6 +39,9 @@ func _process(delta):
 	if !DialogManager.is_dialog_active && Globalscript.currentState == 4:
 		Globalscript.currentState = 5
 		$Player/Camera2D.offset = Vector2(0, 0)
+		DialogManager.start_dialog($Player.position, escapeText)
+	if !DialogManager.is_dialog_active && Globalscript.currentState == 5:
+		Globalscript.currentState = 6
 	
 func _on_interact_front():
 	$FrontInteract/CollisionShape2D.disabled = true

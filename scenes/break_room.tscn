@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dr30k777d2kdp"]
+[gd_scene load_steps=13 format=4 uid="uid://dr30k777d2kdp"]
 
 [ext_resource type="Script" path="res://scripts/break_room.gd" id="1_pexip"]
 [ext_resource type="Texture2D" uid="uid://dtwct7pg1hopp" path="res://Sprites/Grocery_Store_Tile_Map.png" id="2_neowp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://w6cigjklhxi4" path="res://scenes/player.tscn" id="3_naadj"]
 [ext_resource type="PackedScene" uid="uid://p7s6p7twu46w" path="res://Interaction/Interaction area/interaction_area.tscn" id="4_y5boa"]
 [ext_resource type="AudioStream" uid="uid://ds6t7put7jjwj" path="res://sfx/air conditioner sfx (w compressor sound).mp3" id="6_hvntm"]
+[ext_resource type="Texture2D" uid="uid://bmpygucjfrrcw" path="res://Placeholder Sprites/invicons/keyposter.png" id="9_harkr"]
 
 [sub_resource type="GDScript" id="GDScript_wqeyt"]
 
@@ -239,6 +240,23 @@ position = Vector2(-0.999985, -0.999985)
 scale = Vector2(5.505, 5.505)
 shape = SubResource("RectangleShape2D_b3w3x")
 disabled = true
+
+[node name="KeyPoster" parent="." instance=ExtResource("4_y5boa")]
+z_index = 15
+position = Vector2(224, 159)
+action_name = "read poster"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyPoster"]
+position = Vector2(-0.999985, -0.999985)
+scale = Vector2(5.505, 5.505)
+shape = SubResource("RectangleShape2D_b3w3x")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="KeyPoster"]
+visible = false
+z_index = 1
+position = Vector2(1, 0)
+texture = ExtResource("9_harkr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_hvntm")

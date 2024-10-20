@@ -5,6 +5,11 @@ extends Node2D
 @export var interaction: InteractionArea
 
 func _ready():
+	
+	if Globalscript.currentState < 7:
+		interaction.get_node("CollisionShape2D").disabled = true
+		$Sprite2D.visible = false
+	
 	interaction.interact = Callable(self, "_on_interact_item")
 	
 	for i in range(len(player.inv.slots)):

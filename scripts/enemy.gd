@@ -7,14 +7,14 @@ var chase = false
 var player = null
 
 func _physics_process(delta):
-	if Globalscript.currentState == 4:
+	if Globalscript.currentState >= 4:
 		$AnimatedSprite2D.visible = true
 		$Death/CollisionShape2D.disabled = false
 	
-	if chase && Globalscript.enemy_chasing && Globalscript.currentState > 4:
+	if chase && Globalscript.enemy_chasing && Globalscript.currentState > 5:
 		global_position = global_position.move_toward(player.position, delta*speed)
 
-	elif Globalscript.enemy_chasing && Globalscript.currentState > 4:
+	elif Globalscript.enemy_chasing && Globalscript.currentState > 5:
 		# bring him back to 0,0 position
 		position = position.move_toward(Vector2(0,0), delta*speed)
 
