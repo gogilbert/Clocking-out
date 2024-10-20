@@ -1,9 +1,11 @@
-# Clocking Out
-This game is about a store employee who went to sleep before the store closed, and ended up staying inside the break room until only the manager remains... 
+# [Clocking Out](https://obsidiosteel.itch.io/clocking-out)
+Tired after a long shift at work, you rest your head in the break room while waiting for the bus. When you wake up, you find out that you've overslept: the store is now closed, and you are "alone"...
 
-The employee must sneak through the aisles of the store without being detected by the ghostly manager who lurks in the main floor of the store, in order to escape.
+Surely it's as simple as walking out the main entrance, right? If this isn't the case, you may need to find a second way out of the store. But, there's no reason you'd need to do this, and there's certainly no reason the manager would still be in the store with you...
 
-# Controls
+Made for the GMU 2024 Fall Game Jam
+
+# Controls:
 WASD/Arrow Keys: Movement
 
 E: Interact with doors/objects
@@ -11,5 +13,3 @@ E: Interact with doors/objects
 R: Open/close inventory
 
 Enter: Start game/progress through text boxes
-
-
