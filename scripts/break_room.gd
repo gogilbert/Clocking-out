@@ -40,6 +40,8 @@ func _ready():
 		$SleepInteract/CollisionShape2D.disabled = true
 		$KeyPoster/CollisionShape2D.disabled = false
 		$KeyPoster/Sprite2D.visible = true
+		
+		$DarkerTint.color = Color(0, 0, 0, 0.59)
 	
 	#Chooses where to spawn player based on what scene they come from
 	match Globalscript.from_scene:
@@ -51,12 +53,10 @@ func _on_interact_sleep():
 	$StairsInteract/CollisionShape2D.disabled = false
 	$SleepInteract/CollisionShape2D.disabled = true
 	$DarkerTint.color = Color(0, 0, 0, 1)
+	DialogManager.start_dialog($Player.position, wakeUpLines)
 	await get_tree().create_timer(2).timeout
 	$DarkerTint.color = Color(0, 0, 0, 0.59)
 	Globalscript.currentState = 2
-	
-	await get_tree().create_timer(1).timeout
-	DialogManager.start_dialog($Player.position, wakeUpLines)
 	
 func _on_interact_stairs():
 	Globalscript.transition_scene = true

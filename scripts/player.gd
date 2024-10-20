@@ -45,7 +45,10 @@ func setAnim(action: int):
 					animNode.play("walk_down")
 
 func player_movement(delta: float):
-	if !DialogManager.is_dialog_active:
+	if Input.is_action_pressed("quit"):
+		get_tree().quit()
+
+	if !DialogManager.is_dialog_active && !Globalscript.hiding:
 		# Determines the movement action of the player
 		if Input.is_action_pressed("ui_right"):
 			if not $WalkNoise.is_playing():

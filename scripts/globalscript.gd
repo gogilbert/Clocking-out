@@ -7,6 +7,8 @@ var transition_scene = false
 var enemy_chasing = false
 var enemy_prevPosition = 0
 
+var hiding = false
+
 var currentState = 0
 
 func changeScene():

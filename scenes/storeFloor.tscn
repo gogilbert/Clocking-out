@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://jbge7wnxm21x"]
+[gd_scene load_steps=26 format=4 uid="uid://jbge7wnxm21x"]
 
 [ext_resource type="Script" path="res://scripts/storeFloor.gd" id="1_ufkm3"]
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="2_87avc"]
@@ -217,7 +217,10 @@ name = "Plate"
 texture = ExtResource("13_awxe4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuerd"]
-size = Vector2(11.4441, 11.6258)
+size = Vector2(11.4441, 11.4441)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_75m1c"]
+radius = 50.1597
 
 [node name="storeFloor" type="Node2D"]
 script = ExtResource("1_ufkm3")
@@ -364,3 +367,21 @@ action_name = "open front door"
 position = Vector2(-0.999985, -0.999985)
 scale = Vector2(5.505, 5.505)
 shape = SubResource("RectangleShape2D_fuerd")
+
+[node name="HidingPlace1" parent="." instance=ExtResource("4_qcwaf")]
+z_index = 15
+position = Vector2(1026, 177)
+action_name = "hide"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HidingPlace1"]
+shape = SubResource("CircleShape2D_75m1c")
+disabled = true
+
+[node name="HidingPlace2" parent="." instance=ExtResource("4_qcwaf")]
+z_index = 15
+position = Vector2(97, 229)
+action_name = "hide"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HidingPlace2"]
+shape = SubResource("CircleShape2D_75m1c")
+disabled = true
