@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://74m786xnde7v"]
+[gd_scene load_steps=21 format=4 uid="uid://74m786xnde7v"]
 
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="1_013lu"]
 [ext_resource type="Script" path="res://scripts/back_room.gd" id="1_twi6r"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/item_interact.gd" id="8_nyl8s"]
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="9_h4vqk"]
 [ext_resource type="Texture2D" uid="uid://dyopbiwlai6k7" path="res://Placeholder Sprites/invicons/boxcutter.png" id="10_nl3kx"]
+[ext_resource type="Texture2D" uid="uid://b4shqmix2l2dr" path="res://Sprites/Light Texture.png" id="11_wm3dr"]
 
 [sub_resource type="GDScript" id="GDScript_wqeyt"]
 
@@ -210,6 +211,9 @@ texture = ExtResource("10_nl3kx")
 [sub_resource type="CircleShape2D" id="CircleShape2D_eh01w"]
 radius = 23.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm6d3"]
+size = Vector2(1.93779, 2.29201)
+
 [node name="backRoom" type="Node2D"]
 script = ExtResource("1_twi6r")
 
@@ -304,3 +308,39 @@ shape = SubResource("CircleShape2D_eh01w")
 z_index = 1
 position = Vector2(720, 210)
 texture = ExtResource("10_nl3kx")
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(194, 128)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("11_wm3dr")
+texture_scale = 0.4
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(1028, 140)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("11_wm3dr")
+texture_scale = 0.4
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(635, 140)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("11_wm3dr")
+texture_scale = 0.4
+
+[node name="ExitInteract" parent="." instance=ExtResource("4_jm8m2")]
+z_index = 15
+position = Vector2(314, 141)
+rotation = 3.14159
+scale = Vector2(6.765, 6.765)
+action_name = "exit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitInteract"]
+position = Vector2(18.034, 14.3385)
+scale = Vector2(5.505, 5.505)
+shape = SubResource("RectangleShape2D_mm6d3")
+disabled = true
