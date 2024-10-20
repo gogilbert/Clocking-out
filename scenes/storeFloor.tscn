@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://jbge7wnxm21x"]
+[gd_scene load_steps=26 format=4 uid="uid://jbge7wnxm21x"]
 
 [ext_resource type="Script" path="res://scripts/storeFloor.gd" id="1_ufkm3"]
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="2_87avc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://5bmgvd3iskye" path="res://Placeholder Sprites/invicons/ramen.png" id="7_x0154"]
 [ext_resource type="Texture2D" uid="uid://bsbu74o4s2rxi" path="res://Placeholder Sprites/invicons/glue.png" id="12_bccpb"]
 [ext_resource type="Texture2D" uid="uid://buyy7l2c0j8fm" path="res://Placeholder Sprites/invicons/plate.png" id="13_awxe4"]
+[ext_resource type="Texture2D" uid="uid://b4shqmix2l2dr" path="res://Sprites/Light Texture.png" id="14_7kgff"]
 
 [sub_resource type="GDScript" id="GDScript_iqd57"]
 
@@ -364,3 +365,82 @@ action_name = "open front door"
 position = Vector2(-0.999985, -0.999985)
 scale = Vector2(5.505, 5.505)
 shape = SubResource("RectangleShape2D_fuerd")
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(320, 195)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(193, 194)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(65, 198)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+position = Vector2(446, 195)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
+position = Vector2(574, 194)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lights"]
+position = Vector2(706, 197)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
+position = Vector2(1003, 130)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lights"]
+position = Vector2(998, 344)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D9" type="PointLight2D" parent="Lights"]
+position = Vector2(732, 423)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D10" type="PointLight2D" parent="Lights"]
+position = Vector2(479, 416)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
+
+[node name="PointLight2D11" type="PointLight2D" parent="Lights"]
+position = Vector2(239, 420)
+color = Color(0.9261, 0.8722, 0.98, 0.627451)
+energy = 1.5
+texture = ExtResource("14_7kgff")
+texture_scale = 0.5
