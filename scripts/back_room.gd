@@ -12,6 +12,9 @@ func _ready():
 	doorL.interact = Callable(self, "_on_interact_doorL")
 	doorR.interact = Callable(self, "_on_interact_doorR")
 	stairs.interact = Callable(self, "_on_interact_stairs")
+	
+	if Globalscript.currentState > 5:
+		$StairsInteract/CollisionShape2D.disabled = false
 
 	#Chooses where to spawn player based on what scene they come from
 	match Globalscript.from_scene:

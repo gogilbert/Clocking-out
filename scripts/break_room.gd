@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var stairs: InteractionArea = $StairsInteract
 @onready var SleepInteract: InteractionArea = $SleepInteract
+@onready var KeyPosterInteract: InteractionArea = $KeyPoster
 
 const introLines: Array[String] = [
 	"Ah, only 20 minutes till my bus arrives",
@@ -11,6 +12,15 @@ const introLines: Array[String] = [
 const wakeUpLines: Array[String] = [
 	"Wait, what time is it!",
 	"11:30?!?! I gotta get home!"
+]
+
+const keyPosterLines: Array[String] = [
+	"What is this poster on the floor?",
+	"\"I HATE working here! The manager keeps stealing our emergency exit keys.\"",
+	"\"I once had to figure out how to make a key using items in the store!\"",
+	"\"All I needed was a plate, a boxcutter, glue, and a pack of ramen.\"",
+	"\"I know this makes no sense, but I jammed it all into the keyhole and it f***ing opened!\"",
+	"Hmmm, desperate times call for desperate measures. I might as well try it..." 
 ]
 
 func _process(delta):
@@ -23,6 +33,13 @@ func _process(delta):
 func _ready():
 	stairs.interact = Callable(self, "_on_interact_stairs")
 	SleepInteract.interact = Callable(self, "_on_interact_sleep")
+	KeyPosterInteract.interact = Callable(self, "_on_interact_keyposter")
+	
+	if Globalscript.currentState > 5:
+		$StairsInteract/CollisionShape2D.disabled = false
+		$SleepInteract/CollisionShape2D.disabled = true
+		$KeyPoster/CollisionShape2D.disabled = false
+		$KeyPoster/Sprite2D.visible = true
 	
 	#Chooses where to spawn player based on what scene they come from
 	match Globalscript.from_scene:
@@ -45,6 +62,10 @@ func _on_interact_stairs():
 	Globalscript.transition_scene = true
 	Globalscript.from_scene = "stairs"
 
+func _on_interact_keyposter():
+	DialogManager.start_dialog($Player.position, keyPosterLines)
+	Globalscript.currentState = 7
+	
 
 func change_scene():
 	if Globalscript.transition_scene == true:

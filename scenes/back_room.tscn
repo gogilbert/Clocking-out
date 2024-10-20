@@ -264,6 +264,7 @@ action_name = "ascend stairs"
 position = Vector2(-1, -10)
 scale = Vector2(5.505, 5.505)
 shape = SubResource("RectangleShape2D_b3w3x")
+disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_qvfle")
