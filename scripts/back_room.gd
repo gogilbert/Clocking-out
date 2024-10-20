@@ -25,8 +25,8 @@ func _ready():
 			$Player.position.x = 769
 			$Player.position.y = 184
 		"stairs":
-			$Player.position.x = 148
-			$Player.position.y = 75
+			$Player.position.x = 47
+			$Player.position.y = 76
 
 
 func _on_interact_doorL():

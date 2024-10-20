@@ -235,7 +235,7 @@ tile_set = SubResource("TileSet_2mulk")
 
 [node name="Player" parent="." instance=ExtResource("2_3kc8a")]
 z_index = 1
-position = Vector2(148, 75)
+position = Vector2(47, 76)
 
 [node name="DoorLInteract" parent="." instance=ExtResource("4_jm8m2")]
 z_index = 4
@@ -275,6 +275,7 @@ stream = ExtResource("7_7ewsg")
 autoplay = true
 
 [node name="DarkerTint" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_left = 1456.0
 offset_top = 546.0
