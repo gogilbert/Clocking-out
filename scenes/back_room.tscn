@@ -211,6 +211,9 @@ texture = ExtResource("10_nl3kx")
 [sub_resource type="CircleShape2D" id="CircleShape2D_eh01w"]
 radius = 23.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm6d3"]
+size = Vector2(1.93779, 2.29201)
+
 [node name="backRoom" type="Node2D"]
 script = ExtResource("1_twi6r")
 
@@ -279,7 +282,6 @@ stream = ExtResource("7_7ewsg")
 autoplay = true
 
 [node name="DarkerTint" type="ColorRect" parent="."]
-visible = false
 z_index = 2
 offset_left = 1456.0
 offset_top = 546.0
@@ -329,3 +331,16 @@ color = Color(0.9261, 0.8722, 0.98, 0.627451)
 energy = 1.5
 texture = ExtResource("11_wm3dr")
 texture_scale = 0.4
+
+[node name="ExitInteract" parent="." instance=ExtResource("4_jm8m2")]
+z_index = 15
+position = Vector2(314, 141)
+rotation = 3.14159
+scale = Vector2(6.765, 6.765)
+action_name = "exit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitInteract"]
+position = Vector2(18.034, 14.3385)
+scale = Vector2(5.505, 5.505)
+shape = SubResource("RectangleShape2D_mm6d3")
+disabled = true

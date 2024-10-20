@@ -3,7 +3,11 @@ extends Node2D
 @onready var doorL: InteractionArea = $DoorLInteract
 @onready var doorR: InteractionArea = $DoorRInteract
 @onready var stairs: InteractionArea = $StairsInteract
+@onready var exit: InteractionArea = $ExitInteract
 
+const lockedExitLines: Array[String] = [
+	"The door won't budge. I must be missing some more items...",
+]
 
 func _process(delta):
 	change_scene()
@@ -12,9 +16,12 @@ func _ready():
 	doorL.interact = Callable(self, "_on_interact_doorL")
 	doorR.interact = Callable(self, "_on_interact_doorR")
 	stairs.interact = Callable(self, "_on_interact_stairs")
+	exit.interact = Callable(self, "_on_interact_exit")
 	
 	if Globalscript.currentState > 5:
 		$StairsInteract/CollisionShape2D.disabled = false
+	if Globalscript.currentState > 6:
+		$ExitInteract/CollisionShape2D.disabled = false
 
 	#Chooses where to spawn player based on what scene they come from
 	match Globalscript.from_scene:
@@ -42,6 +49,10 @@ func _on_interact_doorR():
 func _on_interact_stairs():
 	Globalscript.transition_scene = true
 	Globalscript.from_scene = "stairs"
+
+func _on_interact_exit():
+	DialogManager.start_dialog($Player.position, lockedExitLines)
+	
 
 func change_scene():
 	if Globalscript.transition_scene == true:
