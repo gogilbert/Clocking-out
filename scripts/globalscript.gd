@@ -5,7 +5,7 @@ var from_scene = "";
 var transition_scene = false
 
 var enemy_chasing = false
-var enemy_prevPosition = null
+var enemy_prevPosition = 0
 
 var currentState = 0
 
