@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://74m786xnde7v"]
+[gd_scene load_steps=21 format=4 uid="uid://74m786xnde7v"]
 
 [ext_resource type="Texture2D" uid="uid://bnrm515w0qaed" path="res://Placeholder Sprites/placeholdertileset.png" id="1_013lu"]
 [ext_resource type="Script" path="res://scripts/back_room.gd" id="1_twi6r"]

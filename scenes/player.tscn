@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://corkoe77jmvuy" path="res://inventory/inv_ui.tscn" id="4_itiey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewwag"]
-size = Vector2(24, 18)
+size = Vector2(17, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqnsh"]
 atlas = ExtResource("2_c4863")
@@ -300,11 +300,11 @@ script = ExtResource("1_q0y3e")
 inv = ExtResource("2_e2yol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 25)
+position = Vector2(0.5, 19.5)
 shape = SubResource("RectangleShape2D_ewwag")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_t7hxv")
 animation = &"down_idle"
 frame_progress = 0.0768274
